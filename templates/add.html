@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Complete Your Profile</title>
+		<link rel="stylesheet" href="../static/index.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+		<header>Add {{table}}</header>
+        <section>
+            <div class="addform" >
+                <form action="{{ url_for('add_confirm') }}" method="post">
+                    {% for col in msg %}
+                        <div>
+                            <p>{{ col }}</p>
+                            <input required type="text" name="{{ col }}">
+                        </div><br>
+                    {% endfor %}
+                    <div>
+                        <button class="confirmadd" type="submit" name='{{ table }}'>Confirm Add</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>

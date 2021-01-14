@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block body %}
+        <section>  
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>Contact</th>
+                        <th>User Id</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {% for value in msg.values() %}
+                        <td>{{ value }}</td>
+                        {% endfor %}
+                        <!--form action="{{ url_for('delete') }}" method="post">
+                            <td>
+                                <button id="button" type="submit" value = '{{ msg.User_id }}' name="User_id+farmer">Delete</button>
+                            </td>
+                        </form-->
+                    </tr>
+                </tbody>
+            </table>
+        </section> 
+{% endblock %}

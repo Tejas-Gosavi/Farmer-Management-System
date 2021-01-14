@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block body %}
+        <section>  
+            <table>
+                <thead>
+                    <tr>
+                        <th>Market Id</th>
+                        <th>Name & Address</th>
+                        <th>Selling Quantity</th>
+                        <th>Selling Price</th>
+                        <th>Selling Date</th>
+                        <th>User id</th>
+                        <th colspan="2">Actions</th>
+                        <form action="{{ url_for('add') }}" method="post">
+                            <th id="noborder"><button type="submit" name="crop_market" id="add">Add</button></th>
+                        </form>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in msg %}
+                    <tr>
+                        {% for value in record.values() %}
+                        <td>{{ value }}</td>
+                        {% endfor %}
+                        <form action="{{ url_for('update') }}" method="post">
+                            <td>
+                                <button id="update" type="submit" value = '{{ record.crop_market_id }}' name="crop_market_id+crop_market">Update</button>
+                            </td>
+                        </form>
+                        <form action="{{ url_for('delete') }}" method="post">
+                            <td>
+                                <button id="delete" type="submit" value = '{{ record.crop_market_id }}' name="crop_market_id+crop_market">Delete</button>
+                            </td>
+                        </form>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section> 
+{% endblock %} 

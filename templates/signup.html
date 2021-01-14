@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Sign Up</title>
+		<link rel="stylesheet" href="../static/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<header>Sign Up</header><br>
+		<div class="msg">{{ msg }}</div><br>
+		<section>
+			<form id="userAddress" action="{{ url_for('signup') }}" method="post"> 
+				<input autofocus required name="username" type="text" placeholder="Enter a Unique User Id"/></br><br>
+				<input required name="password" type="password" placeholder="Enter Your Password"/></br><br>
+				<button id="submit" type="submit">Sign Up</button>
+			</form>
+		</section>
+		<footer>Already have an account? <a href="{{ url_for('login') }}">Sign In</a></footer>
+	</body> 
+</html>

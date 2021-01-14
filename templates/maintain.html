@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+        <section>  
+            <table>
+                <thead>
+                    <tr>
+                        <th>Crop Id</th>
+                        <th>Farm Id</th>
+                        <th>Crop Name</th>
+                        <th>Crop Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {% for value in msg.values() %}
+                        <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+        </section> 
+{% endblock %} 

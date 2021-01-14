@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Complete Your Profile</title>
+		<link rel="stylesheet" href="../static/style1.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<header>Fill your information...</header>
+		<section>
+			<form id="userAddress" action="{{ url_for('complete') }}" autocomplete="off" method="POST">
+				<div>
+					<div class="name">
+						<input autofocus required name="first" type="text" placeholder="First name">
+						<br>
+					</div>
+					<div class="name">
+						<input required name="last" type="text" placeholder="Last name">
+						<br>
+					</div>
+				</div>
+				<div>
+					<div class="name">
+						<select required id="gender" name="gender">
+							<option value="" selected disabled>Gender</option>
+						  	<option value="male">Male</option>
+						  	<option value="female">Female</option>
+						  	<option value="other">Other</option>
+						</select>
+						<br>
+					</div>
+					<div class="name">
+						<input required name="town" type="text" placeholder="Town/Village">
+						<br>
+					</div>
+				</div>
+				<div>
+					<div class="name">
+						<input required name="district" type="text" placeholder="District">
+						<br>
+					</div>
+					<div class="name">
+						<input required name="state" type="text" placeholder="State">
+						<br>
+					</div>
+				</div>
+				<div>
+					<div class="name">
+						<input required name="user_id" type="text" placeholder="User Id">
+						<br>
+					</div>
+					<div class="name">
+						<input required name="contact" type="number" placeholder="Contact">
+						<br>
+					</div>
+				</div>
+				<div class="name">
+					<button id="submit" type="submit">Complete Your Profile</button>
+					<br>
+				</div>
+			</form>
+		</section>
+	</body>
+</html>

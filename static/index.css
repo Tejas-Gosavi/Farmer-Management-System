@@ -1,0 +1,216 @@
+body
+{
+    background: linear-gradient(#606c88, #3f4c6b);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Lato', sans-serif;
+}
+
+header
+{
+   margin-top: 10px;
+   text-align: center;
+   font-size: 25px;
+   color: aliceblue;
+}
+
+nav
+{
+    background-color: #141e30;
+    overflow: hidden;
+}
+
+a
+{
+    float: left;
+    color: aliceblue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+
+a:hover, a:active
+{
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-color: crimson;
+    transition: 0.2s; 
+}
+
+#logout
+{
+    margin-left: 52%;
+    text-align: center;
+}
+
+.msg
+{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+    color: darkred;
+}
+
+table,tr,th,td
+{
+    margin-top: 50px;
+    text-align: center;
+    margin-left: auto; 
+    margin-right: auto;
+    border: 2px solid aliceblue;
+    border-collapse: collapse;
+    padding: 15px;
+}
+
+th
+{
+    font-size: 18px;
+    color: aliceblue;
+    text-shadow: 2px 2px 1px black;
+}
+
+td
+{
+    font-size: 15px;
+    color: aliceblue;
+}
+
+#noborder
+{
+    border: 1px solid red;
+}
+
+#add
+{
+    background-color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    color: aliceblue;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#add:hover
+{
+    background-color: aliceblue;
+    color: #007bff;
+    transition: 0.2s;
+}
+
+#delete
+{
+    background-color: #dc3545;
+    border: 2px solid #dc3545;
+    border-radius: 5px;
+    color: aliceblue;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#delete:hover
+{
+    background-color: aliceblue;
+    color: #dc3545;
+    transition: 0.2s;
+}
+
+#update
+{
+    background-color: #28a745;
+    border: 2px solid #28a745;
+    border-radius: 5px;
+    color: aliceblue;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#update:hover
+{
+    background-color: aliceblue;
+    color: #28a745;
+    transition: 0.2s;
+}
+
+input
+{
+   width: 250px;
+   height: 20px;
+   font-size: 18px;
+   padding: 3px;
+   padding-left: 15px;
+   background: none;
+   border-color: aliceblue;
+   background-color: aliceblue;
+}
+
+p
+{
+    font-size: 15px;
+    color: aliceblue;
+}
+
+.updateform, .addform
+{
+   margin-top: 15px;
+   background: none; 
+   position: relative;
+   left: 41%;
+   display: inline-block;
+   border-radius: 10px;
+   padding: 10px;
+   border-color: aliceblue;
+}
+
+.confirmupdate
+{
+    width: 275px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    color: aliceblue;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.confirmupdate:hover
+{
+    background-color: aliceblue;
+    color: #4CAF50;
+    transition: 0.2s;
+}
+
+.confirmadd
+{
+    width: 275px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    color: aliceblue;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.confirmadd:hover
+{
+    background-color: aliceblue;
+    color: #007bff;
+    transition: 0.2s;
+}

@@ -1,0 +1,122 @@
+body
+{
+   background-image: linear-gradient( rgba(5,84,94,1), #bbb);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   font-family: 'Lato', sans-serif;
+}
+
+header
+{
+   margin-top: 80px;
+   text-align: center;
+   font-size: 50px;
+   color: aliceblue;
+}
+
+.name
+{
+   margin-top: 15px;
+   display: inline-block;
+}
+
+/*Form styling*/
+#userAddress
+{
+   background: none;
+   margin: auto;
+   margin-top: 30px; 
+   position: relative;
+   left: 25%;
+   display: inline-block;
+   border-radius: 10px;
+   padding: 10px;
+   border-color: aliceblue;
+}
+
+/*input boxes*/
+input
+{
+   width: 300px;
+   height: 35px;
+   font-size: 18px;
+   padding: 3px;
+   padding-left: 15px;
+   background: none;
+   border-color: aliceblue;
+   background-color: aliceblue;
+}
+
+input::-webkit-input-placeholder
+{
+   font-style: italic;
+   color: black;
+   opacity: 0.7;
+}
+
+input:focus
+{
+   outline: 2px solid;
+   outline-color: black;
+   font-size: 18px;
+}
+
+
+#submit
+{
+   width:max-content;
+   height: 40px;
+   margin-left: 90%;
+   text-align: center;
+   font-size: 23px;
+   color: darkred;
+   border: 2px solid;
+   border-color: aliceblue;
+   border-radius: 5px;
+}
+
+#submit:hover
+{
+   cursor: pointer;
+   transition: all 0.5ms;
+   border-style: 3px solid;
+   border-color: darkred;
+}
+
+footer
+{
+    font-size: 30px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+a:visited
+{
+    text-align: center;
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-align: center;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.msg
+{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+    color: darkred;
+}
+
+#gender
+{
+   width: 323px;
+   height: 44px;
+   font-size: 18px;
+   padding: 3px;
+   background-color: aliceblue;
+}

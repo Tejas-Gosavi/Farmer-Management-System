@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Complete Your Profile</title>
+		<link rel="stylesheet" href="../static/index.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+		<header>Update {{table}}</header>
+        <section>
+            <div class="updateform" >
+                <form action="{{ url_for('update_confirm') }}" method="post">
+                    {% for key, value in msg.items() %}
+                        <div>
+                            <p>{{key}}</p>
+                            <input required type="text" name="{{ key }}" placeholder='{{ value }}'>
+                        </div><br>
+                    {% endfor %}
+                    <div>
+                        <button class="confirmupdate" type="submit" name='{{ table }}'>Confirm Update</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>

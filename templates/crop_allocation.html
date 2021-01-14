@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+{% block body %}
+        <section>  
+            <table>
+                <thead>
+                    <tr>
+                        <th>Crop Id</th>
+                        <th>Crop Name</th>
+                        <th>Crop Quantity</th>
+                        <th>User id</th>
+                        <th colspan="2">Actions</th>
+                        <form action="{{ url_for('add') }}" method="post">
+                            <th id="noborder"><button type="submit" name="crop_allocation" id="add">Add</button></th>
+                        </form>
+                    </tr>
+                </thead>
+                <tbody>
+                        {% for record in msg %}
+                        <tr>
+                            {% for value in record.values() %}
+                            <td>{{ value }}</td>
+                            {% endfor %}
+                            <form action="{{ url_for('update') }}" method="post">
+                                <td>
+                                    <button id="update" type="submit" value = '{{ record.crop_id }}' name="crop_id+crop_allocation">Update</button>
+                                </td>
+                            </form>
+                            <form action="{{ url_for('delete') }}" method="post">
+                                <td>
+                                    <button id="delete" type="submit" value = '{{ record.crop_id }}' name="crop_id+crop_allocation">Delete</button>
+                                </td>
+                            </form>
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </section>
+{% endblock %}

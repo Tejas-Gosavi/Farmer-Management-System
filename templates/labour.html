@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block body %}
+        <section>  
+            <table>
+                <thead>
+                    <tr>
+                        <th>Labour Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Address</th>
+                        <th>Contact No</th>
+                        <th>Work</th>
+                        <th>Working Hours</th>
+                        <th>Salary</th>
+                        <th>User id</th>
+                        <th colspan="2">Actions</th>
+                        <form action="{{ url_for('add') }}" method="post">
+                            <th id="noborder"><button type="submit" name="labour" id="add">Add</button></th>
+                        </form>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in msg %}
+                    <tr>
+                        {% for value in record.values() %}
+                        <td>{{ value }}</td>
+                        {% endfor %}
+                        <form action="{{ url_for('update') }}" method="post">
+                            <td>
+                                <button id="update" type="submit" value = '{{ record.labour_id }}' name="labour_id+labour">Update</button>
+                            </td>
+                        </form>
+                        <form action="{{ url_for('delete') }}" method="post">
+                            <td>
+                                <button id="delete" type="submit" value = '{{ record.labour_id }}' name="labour_id+labour">Delete</button>
+                            </td>
+                        </form>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section> 
+{% endblock %} 
