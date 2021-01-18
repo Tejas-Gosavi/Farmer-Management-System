@@ -5,15 +5,15 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Market Id</th>
-                        <th>Name & Address</th>
-                        <th>Selling Quantity</th>
-                        <th>Selling Price</th>
-                        <th>Selling Date</th>
+                        <th>Pesticide Id</th>
+                        <th>Pesticide Name</th>
+                        <th>Quantity(in kg)</th>
+                        <th>Price</th>
+                        <th>Crop Name</th>
                         <th>User id</th>
                         <th colspan="2">Actions</th>
                         <form action="{{ url_for('add') }}" method="post">
-                            <th id="noborder"><button type="submit" name="crop_market" id="add">Add</button></th>
+                            <th id="noborder"><button type="submit" name="pesticide" id="add">Add</button></th>
                         </form>
                     </tr>
                 </thead>
@@ -26,12 +26,12 @@
                         {% endfor %}
                         <form action="{{ url_for('update') }}" method="post">
                             <td>
-                                <button id="update" type="submit" value = '{{ record.crop_market_id }}' name="crop_market_id+crop_market">Update</button>
+                                <button id="update" type="submit" value = '{{ record.pesticide_id }}' name="pesticide_id+pesticide">Update</button>
                             </td>
                         </form>
                         <form action="{{ url_for('delete') }}" method="post">
                             <td>
-                                <button id="delete" type="submit" value = '{{ record.crop_market_id }}' name="crop_market_id+crop_market">Delete</button>
+                                <button id="delete" type="submit" value = '{{ record.pesticide_id }}' name="pesticide_id+pesticide">Delete</button>
                             </td>
                         </form>
                     </tr>

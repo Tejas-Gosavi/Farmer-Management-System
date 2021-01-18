@@ -96,48 +96,91 @@ def home():
 
 @app.route('/farm')
 def farm():
+    msg=""
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
     cursor.execute('SELECT * FROM farm WHERE User_id = %s ', (session['id'],))
     info = cursor.fetchall()
     if len(info)==0:
-        return render_template('no_data.html', user=session['id'])
-    return render_template('farm.html',msg=info, user=session['id'])
+        msg="Sorry, no data found!!!"
+        return render_template('farm.html', confirm=msg, user=session['id'])
+    return render_template('farm.html', msg=info, confirm=msg, user=session['id'])
 
 @app.route('/crop_allocation')
 def crop_allocation():
+    msg=""
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
     cursor.execute('SELECT * FROM crop_allocation WHERE User_id = %s ', (session['id'],))
     info = cursor.fetchall()
     if len(info)==0:
-        return render_template('no_data.html', user=session['id'])
-    return render_template('crop_allocation.html',msg=info, user=session['id'])
+        msg="Sorry, no data found!!!"
+        return render_template('crop_allocation.html', confirm=msg, user=session['id'])
+    return render_template('crop_allocation.html', msg=info, confirm=msg, user=session['id'])
+
+@app.route('/seed')
+def seed():
+    msg=""
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+    cursor.execute('SELECT * FROM seed WHERE User_id = %s ', (session['id'],))
+    info = cursor.fetchall()
+    if len(info)==0:
+        msg="Sorry, no data found!!!"
+        return render_template('seed.html', confirm=msg, user=session['id'])
+    return render_template('seed.html', msg=info, confirm=msg, user=session['id'])
+
+@app.route('/pesticide')
+def pesticide():
+    msg=""
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+    cursor.execute('SELECT * FROM pesticide WHERE User_id = %s ', (session['id'],))
+    info = cursor.fetchall()
+    if len(info)==0:
+        msg="Sorry, no data found!!!"
+        return render_template('pesticide.html', confirm=msg, user=session['id'])
+    return render_template('pesticide.html', msg=info, confirm=msg, user=session['id'])
+
+@app.route('/fertilizer')
+def fertilizer():
+    msg=""
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+    cursor.execute('SELECT * FROM fertilizer WHERE User_id = %s ', (session['id'],))
+    info = cursor.fetchall()
+    if len(info)==0:
+        msg="Sorry, no data found!!!"
+        return render_template('fertilizer.html', confirm=msg, user=session['id'])
+    return render_template('fertilizer.html', msg=info, confirm=msg, user=session['id'])
 
 @app.route('/labour')
 def labour():
+    msg=""
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
     cursor.execute('SELECT * FROM labour WHERE User_id = %s ', (session['id'],))
     info = cursor.fetchall()
     if len(info)==0:
-        return render_template('no_data.html', user=session['id'])
-    return render_template('labour.html',msg=info, user=session['id'])
+        msg="Sorry, no data found!!!"
+        return render_template('labour.html', confirm=msg, user=session['id'])
+    return render_template('labour.html', msg=info, confirm=msg, user=session['id'])
 
 @app.route('/warehouse')
 def warehouse():
+    msg=""
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
     cursor.execute('SELECT * FROM warehouse WHERE User_id = %s ', (session['id'],))
     info = cursor.fetchall()
     if len(info)==0:
-        return render_template('no_data.html', user=session['id'])
-    return render_template('warehouse.html',msg=info, user=session['id'])
+        msg="Sorry, no data found!!!"
+        return render_template('warehouse.html', confirm=msg, user=session['id'])
+    return render_template('warehouse.html', msg=info, confirm=msg, user=session['id'])
 
 @app.route('/crop_market')
 def crop_market():
+    msg=""
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
     cursor.execute('SELECT * FROM crop_market WHERE User_id = %s ', (session['id'],))
     info = cursor.fetchall()
     if len(info)==0:
-        return render_template('no_data.html', user=session['id'])
-    return render_template('crop_market.html',msg=info, user=session['id'])
+        msg="Sorry, no data found!!!"
+        return render_template('crop_market.html', confirm=msg, user=session['id'])
+    return render_template('crop_market.html', msg=info, confirm=msg, user=session['id'])
 
 @app.route("/delete", methods =['GET', 'POST'])
 def delete():

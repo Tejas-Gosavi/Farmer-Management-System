@@ -4,19 +4,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../static/index.css">
+        <link rel="shortcut icon" href="../static/sprout.png" type="image/x-icon">
     </head>
     <body>
         <header>Hello {{user}}</header><br>
-        <nav>
-            <a href="{{ url_for('home') }}">Home</a>
-            <a href="{{ url_for('farm') }}">Farm</a>
-            <a href="{{ url_for('crop_allocation') }}">Crop Allocation</a>
-            <!--a href="/">Maintain</a-->
-            <a href="{{ url_for('labour') }}">Labours</a>
-            <a href="{{ url_for('warehouse') }}">Warehouse</a>
-            <a href="{{ url_for('crop_market') }}">Crop Market</a>
-            <a id="logout" href="{{ url_for('logout') }}">Log out</a>
-        </nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('farm') }}">Farm</a></li>
+            <li><a href="{{ url_for('crop_allocation') }}">Crop Allocation</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Maintain &#8226;</a>
+                <div class="dropdown-content">
+                  <a href="{{ url_for('seed') }}">Seed</a>
+                  <a href="{{ url_for('pesticide') }}">Pesticide</a>
+                  <a href="{{ url_for('fertilizer') }}">Fertilizer</a>
+                </div>
+            </li>
+            <li><a href="{{ url_for('labour') }}">Labours</a></li>
+            <li><a href="{{ url_for('warehouse') }}">Warehouse</a></li>
+            <li><a href="{{ url_for('crop_market') }}">Crop Market</a></li>
+            <li><a href="{{ url_for('logout') }}">Log out</a></li>
+        </ul>
         {% block body %}{% endblock %}
+        <!--footer id="freepik">
+            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </footer-->
     </body>
+    <script>
+    </script>
 </html>
