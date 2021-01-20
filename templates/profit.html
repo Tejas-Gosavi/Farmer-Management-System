@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block body %}
+        <section>  
+            <table>
+                <thead>
+                    <tr>
+                        <th>Selling Price</th>
+                        <th>Seed</th>
+                        <th>Pesticides</th>
+                        <th>Fertilizers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td  rowspan="2">{{ sp }}</td>
+                        {% for val in values %}
+                            <td>{{ val }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <td colspan="3">Total expenditures = {{ total_exp }}</td> 
+                    </tr>
+                    <tr>
+                        <td id="profit" colspan="4">Profit = {{ sp - total_exp }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+{% endblock %}

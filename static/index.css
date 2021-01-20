@@ -284,3 +284,44 @@ p
     text-align: center;
     text-decoration: underline;
 }
+
+.cropwise
+{
+    width: 275px;
+    height: 40px;
+    margin-left: 560px;
+    margin-top: 10px;
+    background-color: #17a2b8;
+    border: 2px solid #17a2b8;
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.cropwise:hover
+{
+    background-color: aliceblue;
+    color: #17a2b8;
+    transition: 0.2s;
+}
+
+
+#profit
+{
+    background-color: #28a745;
+    font-size: 20px;
+}
+
+#loss
+{
+    background-color: #dc3545;
+    font-size: 20px;
+}
+
+#neutral
+{
+    background-color: #007bff;
+    font-size: 20px;
+}

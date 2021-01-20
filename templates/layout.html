@@ -23,6 +23,13 @@
             <li><a href="{{ url_for('labour') }}">Labours</a></li>
             <li><a href="{{ url_for('warehouse') }}">Warehouse</a></li>
             <li><a href="{{ url_for('crop_market') }}">Crop Market</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Profit-Loss &#8226;</a>
+                <div class="dropdown-content">
+                  <a href="#">Current</a>
+                  <a href="{{ url_for('cropwise') }}">Crop wise</a>
+                </div>
+            </li>
             <li><a href="{{ url_for('logout') }}">Log out</a></li>
         </ul>
         {% block body %}{% endblock %}
@@ -30,6 +37,4 @@
             <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         </footer-->
     </body>
-    <script>
-    </script>
 </html>

@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL 
 import MySQLdb.cursors 
 import re 
+from decimal import *
   
 app = Flask(__name__) 
 
@@ -301,4 +302,107 @@ def add_confirm():
         cursor.execute(sql)
         mysql.connection.commit()
         return redirect(table)
-    return render_template('login.html', msg = msg) 
+    return render_template('login.html', msg = msg)
+
+def calculate_total(d):
+    total=0
+    for v in d:
+        total+=list(v.values())[0]
+    return(total)
+
+@app.route('/profit_loss_overall', methods=['GET', 'post'])
+def profit_loss_overall():
+    msg=''
+    sql1 = "SELECT selling_price FROM crop_market WHERE User_id = '"+session['id']+"' "
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+    cursor.execute(sql1)
+    sell = cursor.fetchall()
+    sell = calculate_total(sell)
+    print(sell)
+
+    q1="SELECT seed_price FROM seed WHERE User_id = '"+session['id']+"' "  
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+    cursor.execute(q1)
+    exp1 = cursor.fetchall()
+    exp1 = calculate_total(exp1)
+    #exp1 = exp1.values()
+    
+    q2="SELECT pesticide_price FROM pesticide WHERE User_id = '"+session['id']+"' "
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+    cursor.execute(q2)
+    exp2 = cursor.fetchall()
+    exp2 = calculate_total(exp2)
+    #exp2 = list(exp2.values())
+
+    q3="SELECT fertilizer_price FROM fertilizer WHERE User_id = '"+session['id']+"' "
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+    cursor.execute(q3)
+    exp3 = cursor.fetchall()
+    exp3 = calculate_total(exp3)
+    #exp2 = list(exp2.values())
+
+    q4="SELECT salary FROM labour WHERE User_id = '"+session['id']+"' "
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+    cursor.execute(q4)
+    exp4 = cursor.fetchall()
+    exp4 = calculate_total(exp4)
+
+    print(exp1)
+    print(exp2)
+    print(exp3)
+    print(exp4)
+
+    total_exp=exp1+exp2+exp3+exp4
+    
+    #print(sql2)
+    #cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+    #cursor.execute(sql2)
+    #exp = cursor.fetchall()
+    #print(exp)
+
+@app.route('/cropwise', methods=['GET', 'post'])
+def cropwise():
+    return render_template("cropwise.html",user=session['id'])
+
+@app.route('/profit_loss_cropwise', methods=['GET', 'post'])
+def profit_loss_cropwise():
+    msg = ''
+    if request.method == 'POST':
+        crop_name=request.form['crop_name']
+        sql1 = "SELECT selling_price FROM crop_market WHERE crop_name = '"+crop_name+"' "
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+        cursor.execute(sql1)
+        sp = cursor.fetchall()
+        sp = calculate_total(sp)
+
+        q1="SELECT seed_price FROM seed WHERE crop_name = '"+crop_name+"' " 
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+        cursor.execute(q1)
+        exp1 = cursor.fetchall()
+        exp1 = calculate_total(exp1)
+        
+        
+        q2="SELECT pesticide_price FROM pesticide WHERE crop_name = '"+crop_name+"' "
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+        cursor.execute(q2)
+        exp2 = cursor.fetchall()
+        exp2 = calculate_total(exp2)
+        
+
+        q3="SELECT fertilizer_price FROM fertilizer WHERE crop_name = '"+crop_name+"' "
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+        cursor.execute(q3)
+        exp3 = cursor.fetchall()
+        exp3 = calculate_total(exp3)
+        
+        total_exp=exp1+exp2+exp3
+
+        values=[exp1, exp2, exp3]
+
+        if (sp - total_exp) > 0:
+            return render_template('profit.html', values=values, total_exp=total_exp, sp=sp, user=session['id'])
+        elif (sp - total_exp) < 0:
+            return render_template('loss.html', values=values, total_exp=total_exp, sp=sp, user=session['id'])
+        else:
+            return render_template('neutral.html', values=values, total_exp=total_exp, sp=sp, user=session['id'])
+    return render_template('login.html', msg = msg)
