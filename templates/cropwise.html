@@ -1,16 +1,23 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <section>
-        <div>
-            <form action="{{ url_for('profit_loss_cropwise') }}" method="post">
-                <div class="updateform">
-                    <input autofocus required type="text" name="crop_name" placeholder="Enter Crop name">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-4 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <form action="{{ url_for('profit_loss_cropwise') }}" method="post">
+                        <div class="form-group">
+                            <input autofocus required class="form-control" type="text" name="crop_name" placeholder="Enter Crop name">
+                        </div>
+                        <hr class="my-4">
+						<div class="text-center">
+                            <button type="submit" class="btn btn-info">Calculate</button>
+                        </div>
+                    </form>
                 </div>
-                <div>
-					<button class="cropwise" type="submit">Calculate</button>
-				</div>
-            </form>
+            </div>
         </div>
-    </section>
+    </div>
+</div>
 {% endblock %}

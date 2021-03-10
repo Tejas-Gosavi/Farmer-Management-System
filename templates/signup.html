@@ -2,22 +2,40 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Sign Up</title>
-		<link rel="stylesheet" href="../static/style.css">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="../static/sprout.png" type="image/x-icon">
+		<link rel="stylesheet" href="../static/index.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	</head>
 
 	<body>
-		<header>Sign Up</header><br>
-		<div class="msg">{{ msg }}</div><br>
-		<section>
-			<form id="userAddress" action="{{ url_for('signup') }}" method="post"> 
-				<input autofocus required name="username" type="text" placeholder="Enter a Unique User Id"/></br><br>
-				<input required name="password" type="password" placeholder="Enter Your Password"/></br><br>
-				<button id="submit" type="submit">Sign Up</button>
-			</form>
-		</section>
-		<footer>Already have an account? <a href="{{ url_for('login') }}">Sign In</a></footer>
+		<h4 class="text-center" id="error">{{ msg }}</h4>
+		<div class="container">
+			<div class="row">
+			  <div class="col-sm-9 col-md-7 col-lg-4 mx-auto">
+				<div class="card card-signin my-5">
+				  <div class="card-body">
+					<h5 class="card-title text-center">Sign Up</h5><br>
+					<form class="form-signin" action="{{ url_for('signup') }}" method="post">
+					  <div class="form-label-group">
+						<input autofocus required type="text" id="inputText" class="form-control" name="username" placeholder="Enter a Unique User Id"/>
+					  </div><br>
+					  <div class="form-label-group">
+						<input required name="password" type="password" class="form-control" placeholder="Enter a Unique Password"/>
+					  </div><br>
+					  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign up</button>
+					</form>
+						<hr class="my-4">
+						<div class="text-center">
+							Already have an account? <a href="{{ url_for('login') }}">Log In</a>
+						</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>
 	</body> 
 </html>

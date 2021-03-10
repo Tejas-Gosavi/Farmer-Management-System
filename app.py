@@ -266,10 +266,11 @@ def add():
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
         cursor.execute(sql)
         info = list(cursor.fetchall())
+        print(info)
         columns=[]
-        for value in info[1:-1]:
+        for value in info[:-1]:
             columns.append(value["COLUMN_NAME"])
-        #print(columns)
+        print(columns)
         return render_template('add.html', msg=columns, user=session['id'], table=table)
     return render_template('login.html', msg = msg)
 
@@ -316,9 +317,9 @@ def profit_loss_overall():
     sql1 = "SELECT selling_price FROM crop_market WHERE User_id = '"+session['id']+"' "
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
     cursor.execute(sql1)
-    sell = cursor.fetchall()
-    sell = calculate_total(sell)
-    print(sell)
+    total_sp = cursor.fetchall()
+    total_sp = calculate_total(total_sp)
+    
 
     q1="SELECT seed_price FROM seed WHERE User_id = '"+session['id']+"' "  
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
@@ -354,11 +355,14 @@ def profit_loss_overall():
 
     total_exp=exp1+exp2+exp3+exp4
     
-    #print(sql2)
-    #cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
-    #cursor.execute(sql2)
-    #exp = cursor.fetchall()
-    #print(exp)
+    values=[exp1, exp2, exp3, exp4]
+    if (total_sp - total_exp) > 0:
+        return render_template('profit.html', values=values, total_exp=total_exp, sp=total_sp, user=session['id'])
+    elif (total_sp - total_exp) < 0:
+        return render_template('loss.html', values=values, total_exp=total_exp, sp=total_sp, user=session['id'])
+    else:
+        return render_template('neutral.html', values=values, total_exp=total_exp, sp=total_sp, user=session['id'])
+    return render_template('login.html', msg = msg)
 
 @app.route('/cropwise', methods=['GET', 'post'])
 def cropwise():

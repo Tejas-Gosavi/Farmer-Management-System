@@ -1,9 +1,10 @@
 {% extends "layout.html" %}
 
 {% block body %}
+        <h6 class="text-center" id="msg">{{ confirm }}</h6>
         <section>  
-            <table>
-                <thead>
+            <table class="table table-sm text-center table-bordered">
+                <thead class="thead-light">
                     <tr>
                         <th>Fertilizer Id</th>
                         <th>Fertilizer Name</th>
@@ -12,31 +13,31 @@
                         <th>Crop Name</th>
                         <th>User id</th>
                         <th colspan="2">Actions</th>
-                        <form action="{{ url_for('add') }}" method="post">
-                            <th id="noborder"><button type="submit" name="fertilizer" id="add">Add</button></th>
-                        </form>
+                        <th>
+                            <form action="{{ url_for('add') }}" method="post">
+                                <button type="submit" class="btn btn-primary btn-sm" name="fertilizer" >Add</button>
+                            </form>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <header>{{ confirm }}</header>
                     {% for record in msg %}
                     <tr>
                         {% for value in record.values() %}
-                        <td>{{ value }}</td>
+                            <td>{{ value }}</td>
                         {% endfor %}
                         <form action="{{ url_for('update') }}" method="post">
                             <td>
-                                <button id="update" type="submit" value = '{{ record.fertilizer_id }}' name="fertilizer_id+fertilizer">Update</button>
+                                <button type="submit" class="btn btn-success btn-sm" value = '{{ record.fertilizer_id }}' name="fertilizer_id+fertilizer" >Update</button>
                             </td>
                         </form>
                         <form action="{{ url_for('delete') }}" method="post">
                             <td>
-                                <button id="delete" type="submit" value = '{{ record.fertilizer_id }}' name="fertilizer_id+fertilizer">Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm" value = '{{ record.fertilizer_id }}' name="fertilizer_id+fertilizer" >Delete</button>
                             </td>
                         </form>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
-        </section> 
 {% endblock %} 

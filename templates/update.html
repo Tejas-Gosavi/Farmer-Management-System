@@ -5,11 +5,10 @@
 		<title>Complete Your Profile</title>
 		<link rel="stylesheet" href="../static/index.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="../static/sprout.png" type="image/x-icon">
     </head>
 
     <body>
-		<header>Update {{table}}</header>
+        <h4 class="text-center" >Update {{ table }}</h4>
         <section>
             <div class="updateform" >
                 <form action="{{ url_for('update_confirm') }}" method="post">

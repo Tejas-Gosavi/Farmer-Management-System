@@ -1,14 +1,17 @@
 {% extends "layout.html" %}
 
 {% block body %}
-        <section>  
-            <table>
-                <thead>
+            <table class="table text-center table-bordered">
+                <thead class="thead-light">
                     <tr>
-                        <th>Selling Price</th>
+						<th rowspan="2">Selling Price</th>
+						<th colspan="4">Expenditure</th>
+					</tr>
+                    <tr>
                         <th>Seed</th>
                         <th>Pesticides</th>
                         <th>Fertilizers</th>
+                        <th>Labours</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,12 +22,11 @@
                         {% endfor %}
                     </tr>
                     <tr>
-                        <td colspan="3">Total expenditures = {{ total_exp }}</td> 
+                        <td colspan="4">Total expenditures = {{ total_exp }}</td> 
                     </tr>
                     <tr>
-                        <td id="loss" colspan="4">Loss = {{ total_exp - sp }}</td>
+                        <td colspan="5" class="bg-danger text-white">Loss = {{ total_exp - sp }}</td>
                     </tr>
                 </tbody>
             </table>
-        </section>
 {% endblock %}

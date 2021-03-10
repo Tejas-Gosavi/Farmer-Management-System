@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 
 {% block body %}
-        <section>
-            <table>
-                <thead>
+            <h6 class="text-center" id="msg">{{ confirm }}</h6>
+            <table class="table table-sm text-center table-bordered">
+                <thead class="thead-light">
                     <tr>
                         <th>Farm Id</th>
                         <th>Farm Acre</th>
@@ -12,12 +12,13 @@
                         <th>User Id</th>
                         <th colspan="2">Actions</th>
                         <form action="{{ url_for('add') }}" method="post">
-                            <th id="noborder"><button type="submit" name="farm" id="add">Add</button></th>
+                            <th>
+                                <button type="submit" class="btn btn-primary btn-sm" name="farm">Add</button>
+                            </th>
                         </form>
                     </tr>
                 </thead>
-                <tbody>
-                    <header>{{ confirm }}</header>                    
+                <tbody>                
                     {% for record in msg %}
                     <tr>
                         {% for value in record.values() %}
@@ -25,17 +26,16 @@
                         {% endfor %}
                         <form action="{{ url_for('update') }}" method="post">
                             <td>
-                                <button id="update" type="submit" value = '{{ record.farm_id }}' name="farm_id+farm">Update</button>
+                                <button type="submit" class="btn btn-success btn-sm" value = '{{ record.farm_id }}' name="farm_id+farm">Update</button>
                             </td>
                         </form>
                         <form action="{{ url_for('delete') }}" method="post">
                             <td>
-                                <button id="delete" type="submit" value = '{{ record.farm_id }}' name="farm_id+farm">Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm" value = '{{ record.farm_id }}' name="farm_id+farm">Delete</button>
                             </td>
                         </form>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
-        </section> 
 {% endblock %} 
