@@ -10,11 +10,11 @@ This project is very usefull in real-life because it can use for store, process,
 ### Project images
 #### Login page
 ![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_1.png)
-<hr />
+<hr style="border: 3px solid black"> </hr>
 
 #### Home page
 ![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_2.png)
-<hr />
+<hr style="border: 3px solid black"> </hr>
 
 #### Farm data
 ![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_3.png)
