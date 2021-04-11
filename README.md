@@ -7,11 +7,24 @@ This project is very usefull in real-life because it can use for store, process,
 * Backend - Python(Flask)  
 * Database - MySQL
 
-### Project images 
-![Login page](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_1.png)
-![Home page](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_2.png)
-![Farm info](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_3.png)
-![updated Farm info](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_4.png)
-![added Farm info](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_5.png)
-![deleted Farm info](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_6.png)
-![overall profit](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_7.png)
+### Project images
+#### Login page
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_1.png)
+
+#### Home page
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_2.png)
+
+#### Farm data
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_3.png)
+
+#### Upadted Farm data
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_4.png)
+
+#### Added Farm data
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_5.png)
+
+#### Deleted Farm data
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_6.png)
+
+#### Calculated Overall Profit
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_7.png)
