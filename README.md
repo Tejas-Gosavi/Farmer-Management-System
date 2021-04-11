@@ -8,4 +8,4 @@ This project is very usefull in real-life because it can use for store, process,
 * Database - MySQL
 
 ### Project images 
-![alt text](https:\\static\Screenshot_1.png)
+![alt text](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_1.png)
