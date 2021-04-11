@@ -9,7 +9,7 @@ This project is very usefull in real-life because it can use for store, process,
 
 ### Project images
 #### Login page
-![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_1.png = 100x20)
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_1.png) {:height="100px" width="150px"}
 <hr />
 
 #### Home page
