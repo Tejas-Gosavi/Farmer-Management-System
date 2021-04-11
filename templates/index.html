@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 
 {% block body %} 
-            <table class="table table-sm text-center table-bordered">
                 <thead class="thead-light">
                     <tr>
                         <th>Id</th>
@@ -17,15 +16,14 @@
                 </thead>
                 <tbody>
                     <tr>
-                        {% for value in msg.values() %}
-                        <td>{{ value }}</td>
+                        {% for value in info.values() %}
+                            <td>{{ value }}</td>
                         {% endfor %}
                         <form action="{{ url_for('delete') }}" method="post">
                             <td>
-                                <button type="submit" class="btn btn-danger btn-sm" value = '{{ msg.User_id }}' name="User_id+farmer">Delete</button>
+                                <button type="submit" class="dltbtn btn-sm" value = '{{ user_id }}' name="User_id+farmer">Delete</button>
                             </td>
                         </form>
                     </tr>
                 </tbody>
-            </table>
 {% endblock %}

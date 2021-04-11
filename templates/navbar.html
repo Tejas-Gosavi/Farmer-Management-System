@@ -1,0 +1,53 @@
+{% block navbar %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto justify-content-between w-100">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('home') }}">{{user_id}} <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('farm') }}">Farm </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('crop_allocation') }}">Crop Allocation </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Maintain
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ url_for('seed') }}">Seed </a>
+                    <a class="dropdown-item" href="{{ url_for('pesticide') }}">Pesticides </a>
+                    <a class="dropdown-item" href="{{ url_for('fertilizer') }}">Fertilizers </a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('labour') }}">Labours </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('warehouse') }}">Warehouse </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('crop_market') }}">Crop Market </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Profit-Loss
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ url_for('profit_loss_overall') }}">Overall </a>
+                    <a class="dropdown-item" href="{{ url_for('cropwise') }}">Cropwise </a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('logout') }}">Log out </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+{% endblock %}

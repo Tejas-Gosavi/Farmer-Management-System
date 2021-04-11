@@ -1,41 +1,39 @@
 {% extends "layout.html" %}
 
 {% block body %}
-            <h6 class="text-center" id="msg">{{ confirm }}</h6>
-            <table class="table table-sm text-center table-bordered">
-                <thead class="thead-light">
-                    <tr>
-                        <th>Farm Id</th>
-                        <th>Farm Acre</th>
-                        <th>Farm Location</th>
-                        <th>Irrigation Source</th>
-                        <th>User Id</th>
-                        <th colspan="2">Actions</th>
-                        <form action="{{ url_for('add') }}" method="post">
-                            <th>
-                                <button type="submit" class="btn btn-primary btn-sm" name="farm">Add</button>
-                            </th>
-                        </form>
-                    </tr>
-                </thead>
-                <tbody>                
-                    {% for record in msg %}
-                    <tr>
-                        {% for value in record.values() %}
-                            <td>{{ value }}</td>
-                        {% endfor %}
-                        <form action="{{ url_for('update') }}" method="post">
-                            <td>
-                                <button type="submit" class="btn btn-success btn-sm" value = '{{ record.farm_id }}' name="farm_id+farm">Update</button>
-                            </td>
-                        </form>
-                        <form action="{{ url_for('delete') }}" method="post">
-                            <td>
-                                <button type="submit" class="btn btn-danger btn-sm" value = '{{ record.farm_id }}' name="farm_id+farm">Delete</button>
-                            </td>
-                        </form>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+
+    <thead class="thead-light">
+        <tr>
+            <th>Farm Id</th>
+            <th>Farm Acre</th>
+            <th>Farm Location</th>
+            <th>Irrigation Source</th>
+            <th colspan="2">Actions</th>
+            <form action="{{ url_for('add') }}" method="post">
+                <th>
+                    <button type="submit" class="addbtn btn-sm" name="farm_id" value="farm">Add</button>
+                </th>
+            </form>
+        </tr>
+    </thead>
+    <tbody>                
+        {% for record in info %}
+        <tr>
+            {% for value in record.values() %}
+                <td>{{ value }}</td>
+            {% endfor %}
+            <form action="{{ url_for('update') }}" method="post">
+                <td>
+                    <button type="submit" class="udtbtn btn-sm" value = '{{ record.farm_id }}' name="farm_id+farm">Update</button>
+                </td>
+            </form>
+            <form action="{{ url_for('delete') }}" method="post">
+                <td>
+                    <button type="submit" class="dltbtn btn-sm" value = '{{ record.farm_id }}' name="farm_id+farm">Delete</button>
+                </td>
+            </form>
+        </tr>
+        {% endfor %}
+    </tbody>
+
 {% endblock %} 

@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 
 {% block body %}
-            <table class="table text-center table-bordered">
                 <thead class="thead-light">
                     <tr>
 						<th rowspan="2">Selling Price</th>
@@ -25,8 +24,7 @@
                         <td colspan="4">Total expenditures = {{ total_exp }}</td> 
                     </tr>
                     <tr>
-                        <td colspan="5" class="bg-success text-white">Profit = {{ sp - total_exp }}</td>
+                        <td colspan="5" class="bg-{{color}} text-white">Profit = {{ sp - total_exp }}</td>
                     </tr>
                 </tbody>
-            </table>
 {% endblock %}

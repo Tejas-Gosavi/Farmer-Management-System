@@ -1,28 +1,37 @@
+{% include "css.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Complete Your Profile</title>
-		<link rel="stylesheet" href="../static/index.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+	
+	{% block css %}
+
+	{% endblock %}
 
     <body>
-        <h4 class="text-center" >Update {{ table }}</h4>
-        <section>
-            <div class="updateform" >
-                <form action="{{ url_for('update_confirm') }}" method="post">
-                    {% for key, value in msg.items() %}
-                        <div>
-                            <p>{{key}}</p>
-                            <input required type="text" name="{{ key }}" placeholder='{{ value }}'>
-                        </div><br>
-                    {% endfor %}
-                    <div>
-                        <button class="confirmupdate" type="submit" name='{{ table }}'>Confirm Update</button>
-                    </div>
-                </form>
-            </div>
-        </section>
+        <div class="container">
+			<div class="row">
+				<div class="col-sm-9 col-md-7 col-lg-4 mx-auto">
+					<div class="card card-signin my-5">
+						<div class="card-body">
+							<h5 class="card-title text-center">Update in {{table}}</h5>
+							<form action="{{ url_for('update_confirm') }}" method="post">
+								{% for key, value in info.items() %}
+									<div div class="row">
+										<div div class="col">
+                                            	<p>{{key}}</p>
+                                            <input required type="text" class="form-control" name="{{ key }}" value="{{ value }}" placeholder="{{ value }}">
+										</div>
+									</div><br>
+								{% endfor %}
+								<hr class="my-4">
+								<div class="text-center">
+									<button type="submit" class="btn button" name="{{ table+'+'+column }}" value="{{ id }}">Confirm Update</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
     </body>
 </html>
