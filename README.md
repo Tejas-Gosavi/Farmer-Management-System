@@ -7,5 +7,30 @@ This project is very usefull in real-life because it can use for store, process,
 * Backend - Python(Flask)  
 * Database - MySQL
 
-### Project images 
-![alt text](https:\\static\Screenshot_1.png)
+### Project images
+#### Login page
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_1.png)
+<hr />
+
+#### Home page
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_2.png)
+<hr />
+
+#### Farm data
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_3.png)
+<hr />
+
+#### Upadted Farm data
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_4.png)
+<hr />
+
+#### Added Farm data
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_5.png)
+<hr />
+
+#### Deleted Farm data
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_6.png)
+<hr />
+
+#### Calculated Overall Profit
+![ ](https://github.com/Tejas-Gosavi/Farmer-management-system-project/blob/main/static/Screenshot_7.png)
